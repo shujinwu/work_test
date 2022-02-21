@@ -18,45 +18,46 @@
 （7）对列表进行反转
 """
 
-# str = "123"
-# num_list = []
-# for num in str:
-#     num_list.append(num)
-# new_str = ','.join(num_list)
-# print(new_str)
+str = "123"
+num_list = []
+for num in str:
+    num_list.append(num)
+new_str = ','.join(num_list)
+print(new_str)
 
-# dic = {
-#     'k1': 'v1',
-#     'k2': 'v2',
-#     'k3': 'v3',
-#     'k4': 'v4'
-# }
-# dic['k5'] = 'v5'
-# print(dic)
-#
-# add_dic = {
-#     'k6': 'v6',
-#     'k7': 'v7'
-# }
-# new_dic = {}
-# new_dic.update(dic)
-# new_dic.update(add_dic)
-# print(new_dic)
-#
-# print(new_dic['k4'])
-#
-# for key in new_dic.keys():
-#     if key == 'k8':
-#         print(new_dic[key])
-# print('None')
-#
-# del new_dic['k1']
-# print(new_dic)
-#
-# for key in new_dic.keys():
-#     if key == 'k10':
-#         del new_dic[key]
-# print('None')
+dic = {
+    'k1': 'v1',
+    'k2': 'v2',
+    'k3': 'v3',
+    'k4': 'v4'
+}
+dic['k5'] = 'v5'
+print(dic)
+
+add_dic = {
+    'k6': 'v6',
+    'k7': 'v7'
+}
+new_dic = {}
+new_dic.update(dic)
+new_dic.update(add_dic)
+print(new_dic)
+
+print(new_dic['k4'])
+
+for key in new_dic.keys():
+    if key == 'k8':
+        print(new_dic[key])
+print('None')
+
+del new_dic['k1']
+print(new_dic)
+
+for key in new_dic.keys():
+    if key == 'k10':
+        del new_dic[key]
+        print(new_dic)
+print('None')
 
 fruits = ['apple', 'banana', 'orange', 'banana', '苹果']
 print(fruits.index('orange'))
