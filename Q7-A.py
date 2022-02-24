@@ -8,29 +8,44 @@
 # club_id 在100以内
 # club_Id不能存在的重复
 """
+import random
 
-# word = "1g21gf232123ijh3987dh498fnt49dj47f8"
-# word_info_count = {}
-# for num in word:
-#     word.count(num)
-#     word_info_count[num] = word.count(num)
-# print(word_info_count)
+word = "1g21gf232123ijh3987dh498fnt49dj47f8"
+word_info_count = {}
+for num in word:
+    word.count(num)
+    word_info_count[num] = word.count(num)
+print(word_info_count)
 
-# num = 567
-# num_list = list(range(2, 567))
-# for i in num_list:
-#     if num % i != 0:
-#         pass
-#     else:
-#         break
-#         print("num不是质数" )
-# print("num是质数")
+num = 567
+num_list = list(range(2, 567))
+for i in num_list:
+    if num % i != 0:
+        pass
+    else:
+        break
+        print("num不是质数" )
+print("num是质数")
 
 user_list = {"list":[{"nickname":"茶香谜语","club_info":{"club_id":4,"club_name":"一起玩"}},{"nickname":"风信子","club_info":{}},{"nickname":"西风","club_info":{}},{"nickname":"可爱美丽","club_info":{"club_id":8,"club_name":"西风和"}}]}
 print(user_list["list"])
 no_club_user = []
 for item in user_list["list"]:
-    if item["club_info"] == { }:
+    if item["club_info"] == {}:
         no_club_user.append(item["nickname"])
 print(no_club_user)
+
+club_id_list = []
+for info in user_list["list"]:
+    if info["club_info"] != {}:
+        club_id_list.append(info["club_info"]["club_id"])
+# print(club_id_list)
+
+for mess in user_list["list"]:
+    club_id = random.randint(1, 100)
+    if mess["nickname"] in no_club_user and club_id not in club_id_list:
+        mess["club_info"]["club_id"] = club_id
+        mess["club_info"]["club_name"] = mess["nickname"]
+        club_id_list.append(club_id)
+print(user_list)
 
