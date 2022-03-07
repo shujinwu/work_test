@@ -29,17 +29,40 @@ def reset_num(mess):
 def count_narcissistic_num(num):
     num_list = list(range(100, num))
     narcissistic_num = []
-    total = 0
     for num in num_list:
+        total = 0
         lenth = len(str(num))
-        i = 1
-        for s in range(lenth):
-            i = i * 10
-            total = total + math.pow(num % i, lenth)
-            if total == num:
-                narcissistic_num.append(num)
+        for i in range(1, lenth + 1):
+            if i < lenth:
+                total += math.pow(int(num / math.pow(10, i - 1)) % 10, lenth)
+            else:
+                total += math.pow(int(num / math.pow(10, i - 1)), lenth)
+            # print(total)
+        if total == num:
+            narcissistic_num.append(num)
+
     return narcissistic_num
 
 
-# print(reset_num("jdh864@$09.243,5+27"))
-print(count_narcissistic_num(4056))
+def record_student_info(**kw):
+    student_info = {}
+    if 'name' in kw.keys():
+        student_info['name'] = kw.get('name')
+    if 'age' in kw.keys():
+        student_info['age'] = kw.get('age')
+    if 'height' in kw.keys():
+        student_info['height'] = kw.get('height')
+    if 'weight' in kw.keys():
+        student_info['weight'] = kw.get('weight')
+    if 'sex' in kw.keys():
+        student_info['sex'] = kw.get('sex')
+    if 'address' in kw.keys():
+        student_info['address'] = kw.get('address')
+    else:
+        student_info['address'] = '广州市'
+    return student_info
+
+
+print(reset_num("jdh864@$09.243,5+27"))
+print(count_narcissistic_num(1000))
+print(record_student_info(name='小明', sex='男', address='北京市', aaa= 'yesd'))
